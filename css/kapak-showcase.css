@@ -1,0 +1,478 @@
+/* ==========================================================================
+   GLOBAL KAPAK — MEMBRAN KAPAK & CNC VİTRİN STİLLERİ
+   Marka Kapak & Silka mimari düzeninden ilham alan editoryal vitrin katmanı
+   ========================================================================== */
+
+/* ── 1. MEMBRAN KAPAK HERO ── */
+.kapak-hero {
+  position: relative;
+  min-height: min(92vh, 860px);
+  display: flex;
+  align-items: center;
+  padding: 130px 0 88px;
+  background-color: var(--bg-espresso-deep);
+  color: var(--text-cream);
+  overflow: hidden;
+}
+
+.kapak-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.34;
+  transform: scale(1.03);
+  filter: contrast(1.04) saturate(0.92);
+}
+
+.kapak-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(105deg, rgba(15, 12, 10, 0.94) 0%, rgba(22, 18, 15, 0.82) 52%, rgba(22, 18, 15, 0.65) 100%),
+    radial-gradient(circle at 78% 28%, rgba(197, 160, 89, 0.16), transparent 48%);
+  z-index: 1;
+}
+
+.kapak-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.95fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.kapak-hero-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.kapak-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  background: rgba(197, 160, 89, 0.12);
+  border: 1px solid rgba(197, 160, 89, 0.32);
+  color: var(--color-gold-bright);
+  backdrop-filter: blur(8px);
+}
+
+.kapak-hero-title {
+  font-family: var(--font-editorial);
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.6px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.kapak-hero-title span {
+  color: var(--color-gold-bright);
+  font-style: italic;
+}
+
+.kapak-hero-desc {
+  font-size: clamp(15px, 1.15vw, 17.5px);
+  line-height: 1.72;
+  color: rgba(245, 239, 235, 0.84);
+  max-width: 620px;
+  margin-bottom: 30px;
+}
+
+.kapak-hero-panel {
+  background: rgba(28, 23, 19, 0.78);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: 20px;
+  padding: 28px;
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-ambient-dark);
+}
+
+.kapak-hero-specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.spec-mini-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px 14px;
+}
+
+.spec-mini-box strong {
+  display: block;
+  font-family: var(--font-editorial);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-gold-bright);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.spec-mini-box span {
+  display: block;
+  font-size: 12px;
+  color: rgba(245, 239, 235, 0.72);
+}
+
+/* ── 2. ORTAK BÖLÜM SPACING ── */
+.kapak-section {
+  padding: 96px 0;
+  position: relative;
+}
+
+/* ── 3. KATEGORİ FİLTRE ÇUBUĞU & KAPAK MODEL KARTLARI ── */
+.kapak-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto 44px;
+}
+
+.kapak-tab-btn {
+  appearance: none;
+  border: 1px solid var(--border-light-subtle);
+  background: #fff;
+  color: var(--text-charcoal);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--trans-base);
+}
+
+.kapak-tab-btn:hover {
+  border-color: var(--color-terracotta);
+  color: var(--color-terracotta);
+  transform: translateY(-1px);
+}
+
+.kapak-tab-btn.active {
+  background: var(--bg-espresso);
+  border-color: var(--bg-espresso);
+  color: var(--color-gold-bright);
+  box-shadow: 0 10px 24px rgba(22, 18, 15, 0.16);
+}
+
+.kapak-models-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.door-card {
+  background: #fff;
+  border: 1px solid var(--border-light-subtle);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--trans-base), box-shadow var(--trans-base), border-color var(--trans-base);
+}
+
+.door-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-ambient-warm);
+  border-color: rgba(197, 160, 89, 0.55);
+}
+
+.door-visual-stage {
+  position: relative;
+  padding: 46px 24px 26px;
+  background: linear-gradient(180deg, #F5EFE6 0%, #EFE6D8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-light-faint);
+}
+
+.door-code-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--bg-espresso);
+  color: var(--color-gold-bright);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.door-series-pill {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--text-muted-warm);
+  border: 1px solid var(--border-light-subtle);
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.door-svg-box {
+  width: 132px;
+  height: auto;
+  filter: drop-shadow(0 12px 18px rgba(36, 29, 24, 0.14));
+  transition: transform var(--trans-base);
+}
+
+.door-card:hover .door-svg-box {
+  transform: scale(1.04);
+}
+
+.door-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.door-title {
+  font-family: var(--font-editorial);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-charcoal);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.door-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-muted-warm);
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.door-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.door-meta-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: var(--bg-canvas-cream);
+  color: var(--text-charcoal);
+  border: 1px solid var(--border-light-faint);
+}
+
+.door-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light-faint);
+  font-size: 12.5px;
+}
+
+.door-status-note {
+  color: var(--color-olive);
+  font-weight: 700;
+}
+
+/* ── 4. PVC / PET FOLYO RENK KARTELASI ── */
+.foil-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.foil-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform var(--trans-base), border-color var(--trans-base);
+}
+
+.foil-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold-bright);
+}
+
+.foil-swatch {
+  height: 148px;
+  position: relative;
+  padding: 14px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-shadow: inset 0 -22px 34px rgba(0, 0, 0, 0.14);
+}
+
+.foil-code-badge,
+.foil-finish-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(22, 18, 15, 0.72);
+  color: #F5EFEB;
+  backdrop-filter: blur(6px);
+}
+
+.foil-info {
+  padding: 16px 18px;
+}
+
+.foil-info strong {
+  display: block;
+  font-family: var(--font-editorial);
+  font-size: 21px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.foil-info span {
+  display: block;
+  font-size: 12.5px;
+  color: rgba(245, 239, 235, 0.68);
+}
+
+/* ── 5. TAMAMLAYICI ÜRÜNLER ── */
+.comp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.comp-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border-light-subtle);
+  border-radius: 18px;
+  padding: 28px 24px;
+  transition: transform var(--trans-base), box-shadow var(--trans-base);
+}
+
+.comp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevation);
+}
+
+.comp-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--bg-espresso);
+  color: var(--color-gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.comp-card h3 {
+  font-family: var(--font-editorial);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-charcoal);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.comp-card p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-muted-warm);
+}
+
+/* ── 6. FSD YAZILIM & BAYİ HAZIRLIK ALANI ── */
+.fsd-preview-banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.85fr);
+  gap: 44px;
+  align-items: center;
+  background: rgba(15, 24, 18, 0.56);
+  border: 1px solid rgba(197, 160, 89, 0.28);
+  border-radius: 24px;
+  padding: 44px;
+  box-shadow: var(--shadow-ambient-dark);
+}
+
+.fsd-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.fsd-pill {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  color: var(--text-cream);
+}
+
+.fsd-mock-card {
+  background: rgba(22, 18, 15, 0.85);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: 18px;
+  padding: 28px;
+  color: var(--text-cream);
+}
+
+/* ── 7. RESPONSIVE KURALLAR ── */
+@media (max-width: 1200px) {
+  .kapak-models-grid,
+  .foil-grid,
+  .comp-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  .kapak-hero-grid,
+  .fsd-preview-banner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .kapak-hero {
+    padding: 112px 0 68px;
+  }
+
+  .kapak-section {
+    padding: 72px 0;
+  }
+
+  .fsd-preview-banner {
+    padding: 28px 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .kapak-models-grid,
+  .foil-grid,
+  .comp-grid,
+  .kapak-hero-specs {
+    grid-template-columns: 1fr;
+  }
+}

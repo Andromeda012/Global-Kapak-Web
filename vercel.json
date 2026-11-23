@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/modeller",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/kartela",
+      "destination": "/index.html"
+    }
+  ]
+}
